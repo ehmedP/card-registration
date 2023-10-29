@@ -103,6 +103,10 @@ body {
         width: 60px;
         color: #fff;
     }
+
+    & #card-holder-box {
+        max-width: calc(100% - 100px);
+    }
 }
 
 #month-show, #year-show {
@@ -186,6 +190,9 @@ body {
 
 .register-card #card-holder {
     text-transform: capitalize;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     color: #fff;
     font-size: 13px;
     @media only screen and (min-width: 600px) {
