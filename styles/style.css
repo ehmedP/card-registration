@@ -1,0 +1,308 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,600,700|Source+Sans+Pro:400,600,700&display=swap");
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    text-decoration-line: none;
+}
+
+body { 
+    font-family: "Source Code Pro";
+    background-color: #ddeefc; 
+}
+
+.container { max-width: 1500px; margin: 0 auto; padding: 0 15px; }
+
+.register-card {
+    display: flex;
+    padding: 0 39px 27px 39px;
+    margin: 150px auto;
+    max-width: 440px;
+    min-width: 320px;
+    width: 65%;
+    background-color: #fff;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+
+    @media only screen and (min-width: 600px) {
+        width: 100%;
+    }
+}
+
+.register-card .show-card {
+    border-radius: 13px;
+    margin-top: -90px;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 350px;
+    height: 200px;
+    min-height: 150px;
+    position: relative;
+    perspective: 700px;
+    @media only screen and (max-width: 600px) {
+        height: 150px;
+    } 
+}
+
+.register-card .show-card .img {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 15px;
+    position: absolute;
+    width: 100%;
+    border-radius: 13px;
+    height: 100%;
+    background-color: #eee;
+    transition: 1s;
+    transition-timing-function: cubic-bezier(0.32, 0.04, 0.72, 0.99);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    background: url('/assets/images/6.jpg') center/cover;
+    transform-origin: top;
+}
+
+.register-card .show-card .card-front { 
+    transform: rotateY(-360deg);
+    z-index: 99;
+    & #card-header {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+}
+
+.register-card .show-card .card-front #card-number-show {
+    text-align: center;
+    font-family: monospace;
+    font-size: 25px;
+    color: #fff;
+    word-spacing: 4px;
+    margin-top: 15px;
+    white-space: nowrap;
+    letter-spacing: 2px;
+    @media only screen and (max-width: 660px) {
+        font-size: 23px;
+    } 
+
+    @media only screen and (max-width: 600px) {
+        font-size: 14px
+    } 
+}
+
+.register-card .show-card .card-front #card-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    & .card-date {
+        text-align: center;
+        width: 60px;
+        color: #fff;
+    }
+}
+
+#month-show, #year-show {
+    font-family: monospace;
+    font-size: 14px;
+    
+    @media only screen and (min-width: 600px) {
+        font-size: 19px;
+    }
+}
+
+.register-card .show-card .card-back { 
+    transform: rotateY(-180deg);
+    z-index: 0;
+    padding: 10px;
+    justify-content: center;
+}
+
+.register-card .show-card .card-back .card-header {
+    background-color: #000;
+    height: 22%;
+    position: absolute;
+    left: 0;
+    top: 22px;
+    width: 100%;
+    @media only screen and (max-width: 600px) {
+        top: 13px;
+    } 
+}
+
+.register-card .show-card .card-back .card-main {
+    width: 100%;
+    text-align: end;
+    height: 19%;
+    border-radius: 4px;
+    & #cvv-show {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        background-color: #fff;
+        padding-right: 10px;
+        border-radius: 4px;
+        letter-spacing: 1px;
+    }
+    & > #cvv-title {
+        color: #fff;
+        font-size: 14px;
+        margin-bottom: 5px;
+        @media only screen and (max-width: 600px) {
+            font-size: 10px;
+        } 
+    }
+}
+
+.register-card .show-card .card-back .card-footer {
+    position: absolute;
+    right: 10px;
+    text-align: end;
+    bottom: 7px;
+}
+
+.register-card #register-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 100%; 
+    row-gap: 16px;
+}
+
+.register-card #register-form .input-holder {
+    font-size: 12px;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #1a3b5d;
+    width: 100%;
+    display: block;
+    user-select: none;
+}
+
+.register-card #card-holder {
+    text-transform: capitalize;
+    color: #fff;
+    font-size: 13px;
+    @media only screen and (min-width: 600px) {
+        font-size: 16px;
+    }
+}
+
+.expres-title, .holder-title {
+    font-size: 10px;
+    margin-bottom: 3px;
+    color: #ccc;
+
+    @media only screen and (min-width: 600px) {
+        & {
+            font-size: 12px;
+        }
+    }
+}
+
+.register-card #register-form .col {
+    width: 100%;
+    & :is(input, select) {
+        border-radius: 5px;
+        outline: none;
+        width: 100%;
+        border: 1px solid #ced6e0;
+        height: 45px;
+        box-shadow: none;
+        transition: all 0.3s ease-in-out;
+        font-size: 15px;
+        padding: 5px 13px;
+        background: none;
+        color: #1a3b5d;
+
+        &:hover {
+            border-color: #3d9cff;
+        }
+    }
+}
+
+.register-card #register-form button[type="submit"] {
+    font-size: 17px;
+    color: #fff;
+    background-color: #2364d2;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    height: 40px;
+    width: 100%;
+    outline: none;
+    margin-top: 12px;
+    &:hover {
+        transform: scale(1.01);
+    }
+    &:active {
+        transform: scale(1);
+    }
+}
+
+.register-card #register-form .col:nth-child(3) .inner-col {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    & > label {
+        position: relative;
+        & > div {
+            position: absolute;
+            top: -15px;
+            left: 1px;
+        }
+        & input { height: 44px }
+    }
+
+    & .month-input-holder {
+        display: flex;
+        gap: 15px;
+        flex-direction: row;
+    }
+    & .cvv-input-holder { max-width: initial }
+    & .date-inputs-holder { margin-right: initial; }
+
+    @media only screen and (min-width: 600px) {
+        & { 
+            gap: initial;
+            flex-direction: row; 
+
+            & .cvv-input-holder { max-width: 140px; flex: 1; }
+            & .date-inputs-holder { flex: 1; margin-right: 15px; }
+        }
+    }
+}
+
+#card-number-show {
+
+    & .digit {
+        display: inline-block;
+    }
+
+    & .newDigit {
+        animation: cardNumberDigitAnim;
+        animation-duration: .1s;
+        animation-fill-mode: both;
+        animation-timing-function: linear;
+    }
+}
+
+
+@keyframes cardNumberDigitAnim {
+    0% {
+        transform: translateY(-15px);
+        filter: blur(1px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        filter: blur(0);
+        transform: translateY(0);
+    }
+}
